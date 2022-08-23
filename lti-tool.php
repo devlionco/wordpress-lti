@@ -209,6 +209,11 @@ function lti_tool_parse_request($wp)
             $lti_tool_data_connector->redirect = !empty($_POST['custom_redirect']) ? $_POST['custom_redirect'] : null;
         }
 
+        // Set blog
+        if (!empty($_POST)) {
+            $lti_tool_data_connector->site = !empty($_POST['custom_site']) ? $_POST['custom_site'] : null;
+        }
+
         // Clear any existing session variables for this plugin
         lti_tool_reset_session(true);
 

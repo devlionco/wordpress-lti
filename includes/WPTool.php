@@ -171,6 +171,10 @@ class LTI_Tool_WPTool extends Tool
                 $path = $key . $resource_id;
             }
 
+            if (!empty($this->dataConnector->site)) {
+                $path = $this->dataConnector->site;
+            }
+
             // Replace any non-allowed characters in WordPress with -
             $path = preg_replace('/[^_0-9a-zA-Z-]+/', '-', $path);
 
